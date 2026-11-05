@@ -1,9 +1,25 @@
 # quality-engineering-python
 
-Statistical quality control in Python (2022): a **p-chart** for the share of defective samples
-in a production process.
+A p-chart in Python for the share of defective samples in a production process.
 
-The notebook `carta_de_controle.ipynb` (in Portuguese):
+**Status:** coursework (2022)
+
+## Why I built it
+
+This is a statistical quality control exercise from my Quality Engineering course, done as a
+notebook so the chart and the calculations live together.
+
+## Quick start
+
+```sh
+uv run --with pandas --with numpy --with seaborn --with plotly --with jupyter jupyter lab carta_de_controle.ipynb
+```
+
+The notebook is in Portuguese. It runs top to bottom without errors.
+
+## How it works
+
+The notebook `carta_de_controle.ipynb`:
 
 1. Reads 57 timed measurements from `medicao_dados.txt`. A measurement outside the 30 to 50 limits
    counts as a defect.
@@ -16,11 +32,13 @@ The notebook `carta_de_controle.ipynb` (in Portuguese):
 
 The simulation is random, so each run gives slightly different limits.
 
-## Run it
+## About the data
 
-```sh
-uv run --with pandas --with numpy --with seaborn --with plotly --with jupyter jupyter lab carta_de_controle.ipynb
-```
+The week of data is simulated, not measured. Only the 57 real measurements in
+`medicao_dados.txt` feed it, and that file is not the original: it was missing from my first
+upload, so I rebuilt it from the values plotted in the saved notebook. Treat the numbers as a
+class exercise, not a real process study.
 
-`medicao_dados.txt` was missing from the first upload; it was rebuilt from the measurements
-plotted in the saved notebook.
+## License
+
+MIT, see [LICENSE](LICENSE).
